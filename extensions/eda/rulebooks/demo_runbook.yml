@@ -11,8 +11,10 @@
     - name: Run Job Template
       condition: event.payload.message == "hello"
       action:
-        debug: 
-          msg: "msg: Simple debug message"
+        run_playbook:
+          name: test_playbook.yml
+        #debug: 
+        #  msg: "msg: Simple debug message"
         #run_job_template:
         #  name: Demo Job Template
         #  organization: Default
