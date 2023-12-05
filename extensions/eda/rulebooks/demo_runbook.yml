@@ -1,6 +1,6 @@
 ---
 - name: Run Job Template
-  hosts: localhost
+  hosts: 192.168.122.166
 
   sources:
     - ansible.eda.webhook:
