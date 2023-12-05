@@ -9,7 +9,7 @@
 
   rules:
     - name: Run Job Template
-      condition: event.payload.message == "run-job-template"
+      condition: event.payload.message == "hello"
       action:
         run_job_template:
           name: Demo Job Template
