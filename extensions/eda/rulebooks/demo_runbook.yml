@@ -1,6 +1,6 @@
 ---
 - name: Run Job Template
-  hosts: 192.168.122.166
+  hosts: localhost #192.168.122.166
 
   sources:
     - ansible.eda.webhook:
@@ -11,7 +11,8 @@
     - name: Run Job Template
       condition: event.payload.message == "hello"
       action:
-        #debug:
-        run_job_template:
-          name: Demo Job Template
-          organization: Default
+        debug: 
+          msg: "msg: Simple debug message"
+        #run_job_template:
+        #  name: Demo Job Template
+        #  organization: Default
