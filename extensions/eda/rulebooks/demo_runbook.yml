@@ -13,8 +13,8 @@
       action:
         #run_playbook:
         #  name: test_playbook.yml
-        debug: 
-          msg: "msg: Simple debug message"
-        #run_job_template:
-        #  name: Demo Job Template
-        #  organization: Default
+        #debug: 
+        #  msg: "msg: Simple debug message"
+        run_job_template:
+          name: Demo Job Template
+          organization: Default
