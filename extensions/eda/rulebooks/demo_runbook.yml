@@ -1,20 +1,15 @@
 ---
-- name: Run Job Template
-  hosts: localhost #192.168.122.166
-
-  sources:
-    - ansible.eda.webhook:
+- name: Listen for events on a webhook
+  hosts: all
+  sources:   
+    - name: Wait for Webhook Message
+      ansible.eda.webhook:
         host: 0.0.0.0
         port: 5000
-
   rules:
-    - name: Run Job Template
-      condition: event.payload.message == "hello"
+    - name: Say Hello
+      condition: event.payload.message == "Ansible is super cool"
       action:
-        #run_playbook:
-        #  name: test_playbook.yml
-        #debug: 
-        #  msg: "msg: Simple debug message"
         run_job_template:
           name: Demo Job Template
           organization: Default
