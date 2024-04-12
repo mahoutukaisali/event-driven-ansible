@@ -1,6 +1,6 @@
 ---
 - name: Listen for events on a webhook
-  hosts: localhost
+  hosts: all
   sources:   
     - name: Wait for Webhook Message
       ansible.eda.webhook:
