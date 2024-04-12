@@ -1,6 +1,9 @@
 ---
 - name: Listen for events on a webhook
   hosts: all
+  vars:
+    ansible_user: admin
+    ansible_password: redhat
   sources:   
     - name: Wait for Webhook Message
       ansible.eda.webhook:
