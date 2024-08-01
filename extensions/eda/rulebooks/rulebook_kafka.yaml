@@ -8,7 +8,7 @@
         host: 192.168.122.182
         port: 9092
         topic: test-events
-        #group_id: ansible-eda
+        group_id: ansible-eda
   
   rules:
     - name: Check defined
