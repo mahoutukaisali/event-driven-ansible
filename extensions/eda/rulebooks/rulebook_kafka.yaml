@@ -17,3 +17,8 @@
         run_job_template:
           name: eda-test
           organization: Default
+
+    - name: Check defined
+      condition: event.body.i is defined
+      action:
+        debug:
