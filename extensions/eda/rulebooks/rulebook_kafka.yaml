@@ -10,11 +10,13 @@
         topic: test-events
         group_id: ansible-eda
   
-  rules:
+  rules:  
     - name: Check defined
       condition: event.body.i is defined
       action:
-        debug:
+        run_job_template:
+          name: eda-test
+          organization: Default
         
     - name: Stop
       condition: event.body.stop == true
