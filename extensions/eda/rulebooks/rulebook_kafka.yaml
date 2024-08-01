@@ -17,6 +17,6 @@
         debug:
         
     - name: Stop
-      condition: event.stop == true
+      condition: event.body.stop == true
       action:
         shutdown:
