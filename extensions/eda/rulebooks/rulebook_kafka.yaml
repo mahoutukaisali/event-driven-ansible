@@ -29,3 +29,8 @@
       condition: event.body.i is defined
       action:
         debug:
+        
+    - name: Stop
+      condition: event.stop == true
+      action:
+        shutdown:
