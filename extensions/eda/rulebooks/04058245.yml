@@ -1,0 +1,33 @@
+---
+- name: Listen for events on a webhook
+  hosts: all
+  vars:
+    ansible_user: admin
+    ansible_password: redhat
+  sources:   
+    - name: Wait for Webhook Message
+      ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5000
+
+  rules:
+    - name: Trigger action of slack notification at log
+      condition: >-
+        event.payload.event_severity == 'Warning'
+      actions:
+        - set_fact:
+            fact:
+              eventdata: "{{ event.payload.trigger_name }}"
+
+        - debug:
+            msg: "{{ eventdata }}"
+
+        - run_job_template:
+            name: slack_notification
+            organization: Default
+            job_args:
+              extra_vars:
+                zbx_host_host: "{{ event.payload.host_host }}"
+                zbx_host_ip: "{{ event.payload.host_ip }}"
+                zbx_subject: "{{ event.payload.subject }}"
+                # zbx_trigger: "{{ eventdata }}"
