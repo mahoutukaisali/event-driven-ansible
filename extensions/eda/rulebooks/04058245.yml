@@ -17,8 +17,8 @@
       condition: event.payload.message == "Ansible is super cool"
       actions:
         - set_fact:
-            fact:
-              eventdata: "{{ event.payload.message }} #"{{ event.payload.trigger_name }}"
+            #fact:
+            eventdata: "{{ event.payload.trigger_name }}"
 
         - debug:
             msg: "{{ eventdata }}"
