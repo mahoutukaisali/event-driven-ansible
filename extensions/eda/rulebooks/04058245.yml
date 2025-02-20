@@ -12,19 +12,17 @@
 
   rules:
     - name: Trigger action of slack notification at log
-      #condition: >-
-      #  event.payload.event_severity == 'Warning'
       condition: event.payload.message == "Ansible is super cool"
-      actions:
-        - set_fact:
-            fact:
-              eventdata: "{{ event.payload.trigger_name }}"
+      action:
+        set_fact:
+          fact:
+            eventdata: "{{ event.payload.trigger_name }}"
 
     - name: Display fact
       condition: fact.eventdata == "this is trigger name"
       actions:
-        - debug:
-            msg: "{{ fact.eventdata }}"
+        #- debug:
+        #    msg: "{{ fact.eventdata }}"
 
         - run_job_template:
             name: slack_notification
