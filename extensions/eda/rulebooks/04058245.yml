@@ -14,7 +14,7 @@
     - name: Trigger action of slack notification at log
       #condition: >-
       #  event.payload.event_severity == 'Warning'
-      condition: event.payload.message == "Ansible is super cool"
+      condition: event.payload.message == "AnsibleisSupercool"
       actions:
         - set_fact:
             #fact:
