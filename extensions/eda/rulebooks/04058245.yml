@@ -15,16 +15,16 @@
       #condition: >-
       #  event.payload.event_severity == 'Warning'
       condition: event.payload.message == "Ansible is super cool"
-      action:
+      actions:
         - set_fact:
             fact:
               eventdata: "{{ event.payload.trigger_name }}"
 
     - name: Display fact
       condition: fact.eventdata == "this is trigger name"
-      action:
+      actions:
         - debug:
-            msg: "{{ eventdata }}"
+            msg: "{{ fact.eventdata }}"
 
         - run_job_template:
             name: slack_notification
