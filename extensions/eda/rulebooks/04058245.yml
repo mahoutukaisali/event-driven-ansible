@@ -18,17 +18,18 @@
       actions:
         - set_fact:
             #fact:
-            eventdata: "{{ event.payload.trigger_name }}"
+            eventdata: "{{ event.payload.message }}" #"{{ event.payload.trigger_name }}"
 
-        - debug:
+        - name: debug set_fact data
+          debug:
             msg: "{{ eventdata }}"
 
         - run_job_template:
             name: slack_notification
             organization: Default
-            job_args:
-              extra_vars:
-                zbx_host_host: "{{ event.payload.host_host }}"
-                zbx_host_ip: "{{ event.payload.host_ip }}"
-                zbx_subject: "{{ event.payload.subject }}"
+            #job_args:
+            #  extra_vars:
+            #    zbx_host_host: "{{ event.payload.host_host }}"
+            #    zbx_host_ip: "{{ event.payload.host_ip }}"
+            #    zbx_subject: "{{ event.payload.subject }}"
                 # zbx_trigger: "{{ eventdata }}"
