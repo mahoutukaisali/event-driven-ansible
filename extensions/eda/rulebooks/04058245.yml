@@ -18,7 +18,7 @@
       actions:
         - set_fact:
             fact:
-              eventdata: "{{ event.payload.trigger_name }}"
+              eventdata: "{{ event.payload.message }} #"{{ event.payload.trigger_name }}"
 
         - debug:
             msg: "{{ eventdata }}"
