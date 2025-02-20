@@ -15,7 +15,7 @@
       #condition: >-
       #  event.payload.event_severity == 'Warning'
       condition: event.payload.message == "AnsibleisSupercool"
-      actions:
+      action:
         - set_fact:
             fact:
               eventdata: "{{ event.payload.trigger_name }}"
