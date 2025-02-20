@@ -20,6 +20,9 @@
             fact:
               eventdata: "{{ event.payload.trigger_name }}"
 
+    - name: Display fact
+      condition: fact.eventdata == "this is trigger name"
+      action:
         - debug:
             msg: "{{ eventdata }}"
 
