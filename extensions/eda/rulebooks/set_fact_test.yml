@@ -22,7 +22,7 @@
             set_facts: true
             
     - name: Device is defined
-      condition: fact.devices == "hi"
+      condition: fact.devices == "this is a set_fact from a Controller Job Template"
       action:
         debug:
           msg: "{{ fact.devices }}"
