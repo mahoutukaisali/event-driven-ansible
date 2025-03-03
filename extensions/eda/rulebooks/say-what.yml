@@ -1,0 +1,9 @@
+---
+- name: say thanks
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Set fact for EDA
+      ansible.builtin.set_fact:
+        cacheable: yes
+        devices: "hi"
