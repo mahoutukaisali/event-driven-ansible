@@ -17,6 +17,7 @@
               eventdata: "{{ event.payload.message }}"
         - run_job_template:
             name: 'Local-set_fact_cache'
+            organization: Default
             set_facts: true
     #- name: Device is defined
     #  condition: fact.devices == "hi"
