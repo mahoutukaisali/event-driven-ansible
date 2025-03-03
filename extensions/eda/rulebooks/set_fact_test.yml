@@ -12,8 +12,8 @@
       condition: event.payload.message == "Ansible is super cool"
   ## Define the action we should take should the condition be met
       action:
-        run_playbook:
-          name: say-what.yml
+        run_job_template:
+          name: 'Local - set_fact cache'
           set_facts: true
     - name: Device is defined
       condition: fact.devices == "hi"
