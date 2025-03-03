@@ -20,9 +20,13 @@
             name: 'Local-set_fact_cache'
             organization: Default
             set_facts: true
+
+        - run_playbook:
+            name: say-what.yml
+            set_facts: true
             
-    - name: Device is defined
-      condition: fact.devices == "this is a set_fact from a Controller Job Template"
+    - name: Obtain set_fact from say-what.yml
+      condition: fact.say-what == "this is a set_fact from say-what" #"this is a set_fact from a Controller Job Template"
       action:
         debug:
-          msg: "{{ fact.devices }}"
+          msg: "{{ fact.say-what }}"
