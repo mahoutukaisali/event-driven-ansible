@@ -9,15 +9,18 @@
   ## Define the conditions we are looking for
   rules:
     - name: Say Hello
-      condition: event.payload.message == "Ansible is super cool"
+      condition: event.payload.message == "Ansible"
   ## Define the action we should take should the condition be met
-      action:
-        run_job_template:
-          name: 'Local - set_fact cache'
-          set_facts: true
-    - name: Device is defined
-      condition: fact.devices == "hi"
+      actions:
+        - set_fact:
+            fact:
+              eventdata: "{{ event.payload.message }}"
+        - run_job_template:
+            name: 'Local - set_fact cache'
+            set_facts: true
+    #- name: Device is defined
+    #  condition: fact.devices == "hi"
   ## Define the action we should take should the condition be met
-      action:
-        debug:
-          msg: "hello"
+    #  action:
+    #    debug:
+    #      msg: "hello"
