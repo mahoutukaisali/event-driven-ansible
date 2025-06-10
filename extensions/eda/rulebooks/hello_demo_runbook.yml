@@ -1,20 +1,24 @@
 ---
 - name: Listen for events on a webhook
   hosts: all
-  vars:
-    ansible_user: admin
-    ansible_password: redhat
   sources:   
     - name: Wait for Webhook Message
       ansible.eda.webhook:
         host: 0.0.0.0
         port: 5001
   rules:
-    - name: Say Hello
-      condition: event.payload.message == "hello"
+    - name: Run Job Template
+      condition: event.payload.message == "run-job-template"
       action:
-        debug: 
-          msg: Hello
+        run_job_template:
+          name: Demo Job Template
+          organization: Default
+          
+    #- name: Say Hello
+    #  condition: event.payload.message == "hello"
+    #  action:
+    #    debug: 
+    #      msg: Hello
         #run_job_template:
         #  name: Demo Job Template
         #  organization: Default
