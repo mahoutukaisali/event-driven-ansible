@@ -2,4 +2,5 @@
 collections:
   #- name: community.general
   - name: ansible.windows
-    source: https://20.243.9.155/pulp_ansible/galaxy/rh-certified/
+    source: https://20.243.9.155/api/galaxy/content/rh-certified/ 
+    #https://20.243.9.155/pulp_ansible/galaxy/rh-certified/　
