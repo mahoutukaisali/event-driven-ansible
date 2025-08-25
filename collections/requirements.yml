@@ -1,6 +1,6 @@
 ---
-collections:
+#collections:
   #- name: community.general
-  - name: ansible.windows
-    source: https://gateway/api/galaxy/content/rh-certified/ 
+  #- name: ansible.windows
+  #  source: https://gateway/api/galaxy/content/rh-certified/ 
     #https://gateway/pulp_ansible/galaxy/rh-certified/　
