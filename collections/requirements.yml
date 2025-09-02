@@ -2,8 +2,6 @@
 collections:
   #- name: community.general
   - name: ansible.windows
-    source: https://ec2-18-183-16-137.ap-northeast-1.compute.amazonaws.com/api/galaxy/content/rh-certified/
-    #https://20.243.9.155/api/galaxy/content/rh-certified/
-    #https://ec2-18-183-16-137.ap-northeast-1.compute.amazonaws.com/pulp_ansible/galaxy/rh-certified/
-    #https://ec2-18-183-16-137.ap-northeast-1.compute.amazonaws.com/api/galaxy/content/rh-certified/ 
+    source: https://gateway/api/galaxy/content/rh-certified/ 
+    #https://gateway/api/galaxy/content/rh-certified/ 
     #https://gateway/pulp_ansible/galaxy/rh-certified/　
