@@ -1,4 +1,5 @@
 ---
 - hosts: all
   tasks:
-    - pause: seconds=300
+    debug: msg=HUGA!!
+    #- pause: seconds=300
