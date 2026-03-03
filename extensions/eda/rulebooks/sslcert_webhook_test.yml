@@ -17,7 +17,7 @@
       condition: event.i < 5
       action:
         run_job_template:
-          name: Test Job Template
+          name: Demo Job Template
           organization: Default
 
   #rules:
